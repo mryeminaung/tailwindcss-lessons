@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="./tailwindcss.js"></script>
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        screens: {
+                            sm: "576px",
+                            md: "750px",
+                        },
+                        fontFamily: {
+                            ok: ["Rubik Dirt", "cursive"],
+                            oo: ["Passions Conflict", "cursive"],
+                        },
+                        colors: {
+                            primary: "#dc2626",
+                        },
+                        spacing: {
+                            128: "32rem",
+                        },
+                    },
+                },
+            };
+        </script>
+    </head>
+    <body class="bg-pink-200 sm:bg-pink-400 md:bg-pink-600 lg:bg-pink-900">
+        <h1 class="font-ok md:text-2xl lg:text-4xl"></h1>
+        <h2 class="font-oo p-128 text-3xl">Point</h2>
+        <h3 class="text-primary border-primary border p-10">Colors</h3>
+
+        <script>
+            const screenWidth = () => {
+                const width = window.innerWidth;
+
+                document.querySelector("h1").innerHTML = `Width: ${width} px`;
+            };
+            window.onresize = screenWidth;
+        </script>
+    </body>
+</html>

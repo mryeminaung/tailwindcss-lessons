@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../dist/output.css" />
+        <title>Grid</title>
+        <style>
+            /* Toggle B */
+            input:checked ~ .dot {
+                transform: translateX(100%);
+                background-color: #48bb78;
+            }
+        </style>
+    </head>
+    <body
+        class="bg-white p-5 transition-colors dark:bg-slate-800 dark:text-white"
+    >
+        <!-- Toggle B -->
+        <div class="mb-12 flex w-full items-center justify-center">
+            <label for="toggleB" class="flex cursor-pointer items-center">
+                <!-- toggle -->
+                <div class="relative">
+                    <!-- input -->
+                    <input type="checkbox" id="toggleB" class="sr-only" />
+                    <!-- line -->
+                    <div class="block h-8 w-14 rounded-full bg-gray-600"></div>
+                    <!-- dot -->
+                    <div
+                        class="dot absolute left-1 top-1 h-6 w-6 rounded-full bg-white transition-all"
+                    ></div>
+                </div>
+                <!-- label -->
+                <div class="ml-3 font-medium text-gray-700">Change Mode</div>
+            </label>
+        </div>
+        <!-- Grid, Cols, Rows -->
+        <h1 class="my-3 text-3xl">Grid, Cols, Rows</h1>
+        <div
+            class="grid grid-cols-1 gap-5 rounded-md bg-slate-300 p-4 text-center sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6"
+        >
+            <div class="border border-cyan-500 bg-yellow-500 p-8">01</div>
+            <div class="border border-cyan-500 bg-yellow-500 p-8">02</div>
+            <div class="border border-cyan-500 bg-yellow-500 p-8">03</div>
+            <div class="border border-cyan-500 bg-yellow-500 p-8">04</div>
+            <div class="border border-cyan-500 bg-yellow-500 p-8">05</div>
+            <div class="border border-cyan-500 bg-yellow-500 p-8">06</div>
+        </div>
+
+        <!-- Col span -->
+        <h1 class="my-3 text-3xl">Col span</h1>
+        <div
+            class="grid grid-cols-1 gap-5 rounded-md bg-slate-300 p-4 text-center md:grid-cols-8"
+        >
+            <div class="border border-cyan-500 bg-green-500 p-5 md:col-span-8">
+                01
+            </div>
+            <div class="border border-cyan-500 bg-green-500 p-5 md:col-span-2">
+                02
+            </div>
+            <div class="border border-cyan-500 bg-green-500 p-5 md:col-span-4">
+                03
+            </div>
+            <div class="border border-cyan-500 bg-green-500 p-5 md:col-span-2">
+                04
+            </div>
+            <div class="border border-cyan-500 bg-green-500 p-5 md:col-span-8">
+                05
+            </div>
+            <div class="border border-cyan-500 bg-green-500 p-5 md:col-span-4">
+                06
+            </div>
+            <div class="border border-cyan-500 bg-green-500 p-5 md:col-span-4">
+                07
+            </div>
+        </div>
+
+        <!-- Row span -->
+        <h1 class="my-3 text-3xl">Row span</h1>
+        <div
+            class="grid grid-cols-1 gap-5 rounded-md bg-slate-300 p-4 text-center md:grid-cols-8"
+        >
+            <div class="border border-cyan-500 bg-red-500 p-5 md:col-span-8">
+                01
+            </div>
+            <div
+                class="row-span-2 border border-cyan-500 bg-red-500 p-5 md:col-span-2"
+            >
+                02
+            </div>
+            <div class="border border-cyan-500 bg-red-500 p-5 md:col-span-4">
+                03
+            </div>
+            <div
+                class="row-span-2 border border-cyan-500 bg-red-500 p-5 md:col-span-2"
+            >
+                04
+            </div>
+            <div class="border border-cyan-500 bg-red-500 p-5 md:col-span-4">
+                05
+            </div>
+            <div class="border border-cyan-500 bg-red-500 p-5 md:col-span-4">
+                06
+            </div>
+            <div class="border border-cyan-500 bg-red-500 p-5 md:col-span-4">
+                07
+            </div>
+        </div>
+
+        <script>
+            let modeBtn = document.querySelector("#toggleB");
+            modeBtn.addEventListener("click", () => {
+                if (modeBtn.checked) {
+                    document.documentElement.classList.add("dark");
+                } else {
+                    document.documentElement.classList.remove("dark");
+                }
+            });
+        </script>
+    </body>
+</html>

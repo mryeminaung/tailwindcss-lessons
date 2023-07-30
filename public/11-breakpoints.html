@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Container</title>
+        <link rel="stylesheet" href="../dist/output.css" />
+    </head>
+    <body>
+        <div
+            class="container mx-auto h-screen bg-red-100 sm:bg-red-300 md:bg-red-500 lg:bg-red-700 xl:bg-red-900 flex items-center justify-center text-5xl demo"
+        ></div>
+
+        <script>
+            const displayScreenSize = () => {
+                let width = window.innerWidth;
+
+                if (width >= 1280)
+                    document.querySelector(
+                        ".demo"
+                    ).innerHTML = `xl : ${width} px`;
+                else if (width >= 1024)
+                    document.querySelector(
+                        ".demo"
+                    ).innerHTML = `lg : ${width} px`;
+                else if (width >= 768)
+                    document.querySelector(
+                        ".demo"
+                    ).innerHTML = `md : ${width} px`;
+                else if (width >= 640)
+                    document.querySelector(
+                        ".demo"
+                    ).innerHTML = `sm : ${width} px`;
+                else
+                    document.querySelector(
+                        ".demo"
+                    ).innerHTML = `less than sm : ${width} px`;
+            };
+            window.onresize = displayScreenSize;
+        </script>
+    </body>
+</html>

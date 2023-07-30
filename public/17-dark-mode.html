@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../dist/output.css" />
+        <title>Light/Dark Mode</title>
+        <style>
+            /* Toggle B */
+            input:checked ~ .dot {
+                transform: translateX(100%);
+                background-color: black;
+            }
+        </style>
+    </head>
+    <body class="flex h-screen flex-col items-center justify-center">
+        <div
+            class="shadow-[#822748]-50 relative w-[400px] overflow-hidden rounded-lg border border-ubuntu bg-white shadow-xl dark:bg-black dark:text-white transition-colors"
+        >
+            <img src="../imgs/ubuntu_22.04.jpg" alt="" class="w-full" />
+            <div class="mt-3 p-5">
+                <h1 class="mb-2 text-2xl">Ubuntu 22.04</h1>
+                <p class="mb-2 text-justify text-slate-600">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Aut, eum, vitae quibusdam animi repudiandae reprehenderit
+                    cumque eius expedita, laboriosam dolorum neque doloribus
+                    obcaecati vero odio nemo voluptate deleniti natus nisi?
+                </p>
+                <button
+                    class="rounded-2xl bg-ubuntu p-3 px-5 font-bold text-white"
+                >
+                    Download Now
+                </button>
+                <div class="absolute top-3 right-3">
+                    <label
+                        for="toggleBtn"
+                        class="flex cursor-pointer items-center"
+                    >
+                        <!-- toggle -->
+                        <div class="relative">
+                            <!-- input -->
+                            <input
+                                type="checkbox"
+                                id="toggleBtn"
+                                class="sr-only"
+                            />
+                            <!-- line -->
+                            <div
+                                class="block h-8 w-14 rounded-full bg-indigo-500"
+                            ></div>
+                            <!-- dot -->
+                            <div
+                                class="dot absolute left-1 top-1 h-6 w-6 rounded-full bg-white transition"
+                            ></div>
+                        </div>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            let modeBtn = document.querySelector("#toggleBtn");
+            modeBtn.addEventListener("click", () => {
+                if (modeBtn.checked) {
+                    document.documentElement.classList.add("dark");
+                } else {
+                    document.documentElement.classList.remove("dark");
+                }
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Container Spacing</title>
+        <!-- <script src="/tailwindcss.js"></script> -->
+        <link rel="stylesheet" href="./dist/output.css" />
+    </head>
+    <body>
+        <div class="container mx-auto">
+            <div class="bg-red-300">
+                <h1>Hello Tailwind</h1>
+                <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Praesentium maiores ea tempore facere sunt veritatis
+                    numquam. Nam aspernatur cum, nisi saepe est iusto mollitia
+                    tenetur delectus, veritatis facilis quod vel!
+                </p>
+            </div>
+            <img src="/ubuntu_22.04.jpg" alt="" />
+            <!-- Padding -->
+            <div class="bg-red-500 p-8">Hello</div>
+            <div class="bg-red-200 p-4">Hello</div>
+            <div class="bg-red-900 pl-48">Hello</div>
+
+            <!-- Margin -->
+            <div class="mt-4 bg-red-500">mt-4</div>
+            <div class="mr-4 bg-red-200">mr-4</div>
+            <div class="ml-4 bg-red-900">ml-4</div>
+            <div class="mx-4 bg-red-900">mx-4</div>
+            <div class="-mx-4 bg-red-900">-mx-4</div>
+            <div class="mt-[100px] bg-red-900">mt-100px</div>
+
+            <!-- Space Between X -->
+            <div class="flex space-x-14">
+                <div class="bg-red-100">01</div>
+                <div class="bg-red-200">02</div>
+                <div class="bg-red-300">03</div>
+            </div>
+
+            <!-- Space Between Y -->
+            <div class="flex flex-col space-y-8">
+                <div class="bg-red-100">01</div>
+                <div class="bg-red-200">02</div>
+                <div class="bg-red-300">03</div>
+            </div>
+        </div>
+    </body>
+</html>

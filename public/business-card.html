@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../../dist/output.css" />
+        <title>Digital Business Card</title>
+        <style>
+            /* Toggle B */
+            input:checked ~ .dot {
+                transform: translateX(100%);
+                background-color: black;
+            }
+        </style>
+    </head>
+    <body class="flex h-screen items-center justify-center bg-slate-800">
+        <div
+            class="mx-auto my-5 max-w-[400px] overflow-hidden rounded-lg bg-slate-50 shadow-md"
+        >
+            <img
+                src="../../imgs/team-4.jpg"
+                alt="Laura Smith"
+                class="w-auto object-cover"
+            />
+            <div class="px-8 py-4 transition-colors dark:bg-[#282c34]">
+                <div class="space-y-0.5 text-center">
+                    <h2
+                        class="text-3xl font-bold tracking-wide transition-colors dark:text-white"
+                    >
+                        Laura Smith
+                    </h2>
+                    <p class="text-yellow-500">Frontend Developer</p>
+                    <p
+                        class="text-sm text-slate-600 transition-colors dark:text-white"
+                    >
+                        laurasmith.website
+                    </p>
+                </div>
+                <a
+                    href="#"
+                    class="my-4 block rounded-md border border-slate-500 py-2 text-center font-semibold transition-colors dark:bg-white"
+                    >Email</a
+                >
+                <div class="my-8 transition-colors dark:text-white">
+                    <div class="space-y-1">
+                        <h3 class="text-2xl font-bold">About</h3>
+                        <p
+                            class="text-sm text-slate-600 transition-colors dark:text-white"
+                        >
+                            I am a frontend Developer with a particular interest
+                            in marking things simple and automating daily tasks.
+                            I try to keep up with security and best practices,
+                            and am always looking for new things to learn.
+                        </p>
+                    </div>
+                    <div class="mt-4 space-y-1">
+                        <h3 class="text-2xl font-bold">Interests</h3>
+                        <p
+                            class="text-sm text-slate-600 transition-colors dark:text-white"
+                        >
+                            Food expert. Music scholar.Reader.Internet fanatic.
+                            Bacon buff. Entrepreneur. Travel geek. Pop culture
+                            ninja. Coffee fanatic
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="bg-gray-300 py-5 transition-colors dark:bg-black dark:text-white"
+            ></div>
+        </div>
+        <!-- Toggle B -->
+        <div class="mb-12 flex items-center justify-center">
+            <label for="toggleB" class="flex cursor-pointer items-center">
+                <!-- toggle -->
+                <div class="relative">
+                    <!-- input -->
+                    <input type="checkbox" id="toggleB" class="sr-only" />
+                    <!-- line -->
+                    <div class="block h-8 w-14 rounded-full bg-gray-600"></div>
+                    <!-- dot -->
+                    <div
+                        class="dot absolute left-1 top-1 h-6 w-6 rounded-full bg-white transition-all"
+                    ></div>
+                </div>
+                <!-- label -->
+                <div class="ml-3 font-medium text-cyan-500">Change Mode</div>
+            </label>
+        </div>
+        <script>
+            let modeBtn = document.querySelector("#toggleB");
+            modeBtn.addEventListener("click", () => {
+                if (modeBtn.checked) {
+                    document.documentElement.classList.add("dark");
+                } else {
+                    document.documentElement.classList.remove("dark");
+                }
+            });
+        </script>
+    </body>
+</html>
